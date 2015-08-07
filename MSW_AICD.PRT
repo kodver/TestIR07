@@ -50,15 +50,20 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
 
 1
 
- ******** ECHO OF INPUT DATA FOR RUN MSW
+ ******** ECHO OF INPUT DATA FOR RUN MSW_AICD
 
+ 0: -----------------------------------------------------------------
+ 0: --AICD Example Data Set
+ 0: -----------------------------------------------------------------
  0: RUNSPEC
- 0: 
  0: TITLE
  0:  A MULTI-LATERAL PRODUCER AND INJECTOR - MULTI-SEGMENT BRANCHES
  0: 
  0: DIMENS
  0:  10  5  10  /
+ 0: 
+ 0: SAVE
+ 0: /
  0: 
  0: OIL
  0: 
@@ -86,16 +91,17 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:  6  3  2  /
  0: 
  0: WSEGDIMS
- 0:  2  30  4  /
+ 0:  2  30  10  /
  0: 
  0: START
  0:  1 'JAN' 1997 /
  0: 
+ 0: UNIFIN
+ 0: UNIFOUT
+ 0: 
  0: -- RPTRUNSP
  0: 
  0: GRID        =========================================================
- 0: 
- 0: NOGGF
  0: 
  0: EQUALS
  0:  'DX'     100  /
@@ -113,7 +119,9 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:   PERMX PERMY /
  0:  /
  0: 
- 0: RPTGRID
+ 0: 
+ 0: GRIDFILE
+ 0:  0 1 /
  0: 
  0: PROPS       ==========================================================
  0: 
@@ -155,29 +163,6 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:   0.7   0.4     1*
  0:   0.74  1*      0.6
  0:   0.78  1.0     1.0   /
- 0: 
- 0: --SWOF
- 0: --  0.22  0     1.0     3.5
- 0: --  0.3   0.07  0.4     2
- 0: --  0.4   0.15  0.125   1.5
- 0: --  0.5   0.24  0.0649  1.25
- 0: --  0.6   0.33  0.0048  1
- 0: --  0.8   0.65  0.0     0.5
- 0: --  0.9   0.83  1*      0.25
- 0: --  1     1     0.0     0      /
- 0: 
- 0: --SLGOF
- 0: --    0.22  1       0.0     3.9
- 0: --    0.3   0.8125  1*      3.5
- 0: --    0.4   0.5     1*      3
- 0: --    0.5   0.42    1*      2.5
- 0: --    0.6   0.34    0.0     2
- 0: --    0.7   0.24    0.02    1.5
- 0: --    0.8   0.1     0.1     1
- 0: --    0.9   0.022   0.33    0.5
- 0: --    0.96  0       0.6     0.2
- 0: --    1.0   0       1.0     0     /
- 0: 
  0: 
  0: PVTW
  0: 3000  1.00341  3.0D-6  0.96  0  /
@@ -226,9 +211,8 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:   /
  0: 
  0: RPTPROPS
- 0: -- PROPS Reporting Options
- 0: --
- 0: /
+ 0:    /
+ 0: 
  0: 
  0: REGIONS    ===========================================================
  0: 
@@ -247,7 +231,7 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0: 
  0: RPTREGS
  0: 
- 0:     /
+ 0:      /
  0: 
  0: SOLUTION    ============================================================
  0: 
@@ -264,166 +248,72 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0: /
  0: 
  0: RPTRST
- 0: 'BASIC=2' 'FLOWS' 'POT' 'PRES' /
+ 0: 'BASIC=3' 'FREQ=1' /
  0: 
  0: RPTSOL
  0: --
  0: -- Initialisation Print Output
  0: --
- 0: 'PRES' 'SOIL' 'SWAT' 'SGAS' 'RS' 'RESTART=1' 'FIP=2' 'EQUIL' 'RSVD' /
+ 0: 'PRES' 'SOIL' 'SWAT' 'SGAS' 'RS' 'RESTART=1' 'FIP=2' 'EQUIL' 'RSVD' //
  0: 
  0: SUMMARY      ===========================================================
  0: 
  0: FOPR
+ 0: FGPR
+ 0: FWPR
+ 0: FWIR
+ 0: FWCT
+ 0: FGOR
+ 0: FOPT
+ 0: FWPT
+ 0: FGPT
  0: 
+ 0: WBHP
+ 0:  'PROD' /
  0: WOPR
  0:  'PROD' /
+ 0: WWPR
+ 0:  'PROD' /
+ 0: WGPR
+ 0:  'PROD' /
+ 0: WWCT
+ 0:  'PROD' /
+ 0: WOPT
+ 0:  'PROD' /
+ 0: WWPT
+ 0:  'PROD' /
+ 0: WGPT
+ 0:  'PROD' /
+ 0: SPRDA
+ 0:  'PROD' /
  0:  /
- 0: 
- 0: FGPR
- 0: 
- 0: FWPR
- 0: 
- 0: FWIR
- 0: 
- 0: FWCT
- 0: 
- 0: FGOR
- 0: 
+ 0: SPRDF
+ 0:  'PROD' /
+ 0:  /
  0: SOFR
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
+ 0:  'PROD' /
  0:  /
- 0: 
- 0: SOFRF
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
+ 0: SGFR
+ 0:  'PROD' /
  0:  /
- 0: 
- 0: SOFRS
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
- 0:  /
- 0: 
  0: SWFR
- 0:  'PROD' 1 /
+ 0:  'PROD' /
  0:  /
- 0: 
- 0: SGFR
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
- 0:  /
- 0: 
- 0: SGFRF
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
- 0:  /
- 0: 
- 0: SGFR
- 0:  'PROD' 1 /
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
- 0:  'PROD' 10 /
- 0:  'PROD' 13 /
- 0:  'PROD' 18 /
- 0:  'PROD' 20 /
- 0:  'PROD' 22 /
- 0:  'PROD' 23 /
- 0:  /
- 0: 
- 0: SWCT
- 0:  'PROD' 1 /
- 0:  'PROD' 3 /
- 0:  'PROD' 13 /
- 0:  'PROD' 14 /
- 0:  'PROD' 15 /
- 0:  'PROD' 16 /
- 0:  'PROD' 17 /
- 0:  /
- 0: 
- 0: SGOR
- 0:  'PROD' 1 /
- 0:  'PROD' 23 /
- 0:  'PROD' 25 /
- 0:  'PROD' 27 /
- 0:  /
- 0: 
  0: SPR
  0:  'PROD' /
  0:  /
- 0: 
- 0: SPRDH
- 0:  'PROD' 2 /
- 0:  'PROD' 3 /
+ 0: SPRD
+ 0:  'PROD' /
  0:  /
- 0: 
  0: SPRDF
  0:  'PROD' /
- 0: /
- 0: 
- 0: SWFR
- 0:  'WINJ' 1 /
- 0:  'WINJ' 4 /
- 0:  'WINJ' 5 /
  0:  /
  0: 
- 0: SWCT
- 0:  'WINJ' 4 /
- 0:  /
  0: 
- 0: SGOR
- 0:  'WINJ' 4 /
- 0:  /
- 0: 
- 0: SPR
- 0:  'WINJ' /
- 0:  /
- 0: 
- 0: SPRDH
- 0:  'WINJ' 2 /
- 0:  'WINJ' 3 /
- 0:  /
- 0: 
- 0: SPRDF
- 0:  'WINJ' /
- 0:  /
- 0: 
+ 0: ALL
  0: RUNSUM
+ 0: SEPARATE
+ 0: RPTONLY
  0: 
  0: SCHEDULE     ===========================================================
  0: 
@@ -445,18 +335,6 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0: /
  0: 
  0: COMPDAT
- 0: 
- 0:  'PROD' 1 1 2 2   3*  0.2   3*  'X' /
- 0:  'PROD' 2 1 2 2   3*  0.2   3*  'X' /
- 0:  'PROD' 3 1 2 2   3*  0.2   3*  'X' /
- 0:  'PROD' 4 1 2 2   3*  0.2   3*  'X' /
- 0:  'PROD' 5 1 2 2   3*  0.2   3*  'X' /
- 0: 
- 0:  'PROD' 1 1 5 5   3*  0.2   3*  'X' /
- 0:  'PROD' 2 1 5 5   3*  0.2   3*  'X' /
- 0:  'PROD' 3 1 5 5   3*  0.2   3*  'X' /
- 0:  'PROD' 4 1 5 5   3*  0.2   3*  'X' /
- 0:  'PROD' 5 1 5 5   3*  0.2   3*  'X' /
  0: 
  0:  'PROD' 1 1 8 8   3*  0.2   3*  'X' /
  0:  'PROD' 2 1 8 8   3*  0.2   3*  'X' /
@@ -480,21 +358,21 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0: WELSEGS
  0: 
  0: -- Name    Dep 1   Tlen 1  Vol 1
- 0:   'PROD'   7010      10    0.31   'INC' /
+ 0:   'PROD'   7010      10    0.31   'INC' 1* 1* 10 10 /
  0: 
  0: -- First   Last   Branch   Outlet  Length   Depth  Diam  Ruff  Area  Vol
  0: -- Seg     Seg    Num      Seg              Chang
  0: -- Main Stem
  0:     2       12     1        1         20     20    0.2   1.E-3  1*   1* /
- 0: -- Top Branch
- 0:     13      13     2        2         50      0    0.2   1.E-3  1*   1* /
+ 0: -- Branch
+ 0:     13      13     2        12        50      0    0.2   1.E-3  1*   1* /
  0:     14      17     2        13       100      0    0.2   1.E-3  1*   1* /
- 0: -- Middle Branch
- 0:     18      18     3        9         50      0    0.2   1.E-3  1*   1* /
- 0:     19      22     3        18       100      0    0.2   1.E-3  1*   1* /
- 0: -- Bottom Branch
- 0:     23      23     4        12        50      0    0.2   1.E-3  1*   1* /
- 0:     24      27     4        23       100      0    0.2   1.E-3  1*   1* /
+ 0: -- ICD segments
+ 0:     18      18     3        13       0.5      0    0.2   1.E-3  1*   1* /
+ 0:     19      19     4        14       0.5      0    0.2   1.E-3  1*   1* /
+ 0:     20      20     5        15       0.5      0    0.2   1.E-3  1*   1* /
+ 0:     21      21     6        16       0.5      0    0.2   1.E-3  1*   1* /
+ 0:     22      22     7        17       0.5      0    0.2   1.E-3  1*   1* /
  0:  /
  0: 
  0: COMPSEGS
@@ -504,12 +382,12 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0: 
  0: -- I  J  K  Brn  Start   End     Dirn   End
  0: --          No   Length  Length  Penet  Range
- 0: -- Top Branch
- 0:    1  1  2  2      30      1*     'X'    5  /
- 0: -- Middle Branch
- 0:    1  1  5  3      170     1*     'X'    5  /
- 0: -- Bottom Branch
- 0:    1  1  8  4      230     1*     'X'    5  /
+ 0: --
+ 0:    1  1  8  3      255     1*     'Y'    1  /
+ 0:    2  1  8  4      330     1*     'Y'    1  /
+ 0:    3  1  8  5      430     1*     'Y'    1  /
+ 0:    4  1  8  6      530     1*     'Y'    1  /
+ 0:    5  1  8  7      630     1*     'Y'    1  /
  0:  /
  0: 
  0: WELSEGS
@@ -547,7 +425,7 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:  /
  0: 
  0: WCONPROD
- 0:  'PROD' 'OPEN' 'LRAT'  3*  4000  1*  1000  0.0  1 /
+ 0:  'PROD' 'OPEN' 'ORAT'  1000 3* 1*  1000  0.0  1 /
  0:  /
  0: 
  0: WCONINJE
@@ -555,37 +433,62 @@ utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
  0:  /
  0: 
  0: WVFPEXP
- 0:  '*' 'EXP' /
+ 0:  '*' 'EXP' NO YES1 /
  0:  /
+ 0: WSEGINIT
+ 0: PROD 1 2 3900 0.3 0 1* 1* /
+ 0: /
+ 0: WSEGAICD
+ 0: --Well  Segments ICD      ICD    unused  scale  max   flow  visc
+ 0: --Name  From To  strength length param   factor absol rate  fnc
+ 0: --                                              qICD  exp   exp
+ 0:  PROD   18   18   0.0002  1*    5*      1*      1*    2    0.25/
+ 0:  PROD   19   19   0.0002  1*    5*      1*      1*    2    0.25/
+ 0:  PROD   20   20   0.0002  1*    5*      1*      1*    2    0.25/
+ 0:  PROD   21   21   0.0002  1*    5*      1*      1*    2    0.25/
+ 0:  PROD   22   22   0.0002  1*    5*      1*      1*    2    0.25/
+ 0: /
+ 0: --ACTIONS
+ 0: --ACT1 'PROD' 2 SOFR > 100 3 1* /
+ 0: 
+ 0: --WTMULT
+ 0: --'PROD' ORAT 0.9 /
+ 0: --/
+ 0: --ENDACTIO
+ 0: 
+ 0: WSEGEXSS
+ 0: PROD 2 WIMPR 100 3 /
+ 0: /
  0: 
  0: TUNING
- 0:  /
+ 0:  1 1 /
  0:  /
  0:  4*  16 /
  0: 
  0: TSTEP
- 0:  2  18  80  100  2*500
+ 0:  240*30
  0: /
  0: 
  0: 
  0: END
 
- ******** END OF INPUT DATA FOR RUN MSW
+ ******** END OF INPUT DATA FOR RUN MSW_AICD
      1 READING RUNSPEC 
      2 READING TITLE   
      3 READING DIMENS  
-     4 READING OIL     
-     5 READING WATER   
-     6 READING GAS     
-     7 READING DISGAS  
-     8 READING FIELD   
-     9 READING TABDIMS 
-    10 READING EQLDIMS 
-    11 READING WELLDIMS
-    12 READING VFPPDIMS
-    13 READING VFPIDIMS
-    14 READING WSEGDIMS
-    15 READING START   
+     4 READING SAVE    
+     5 READING OIL     
+     6 READING WATER   
+     7 READING GAS     
+     8 READING DISGAS  
+     9 READING FIELD   
+    10 READING TABDIMS 
+    11 READING EQLDIMS 
+    12 READING WELLDIMS
+    13 READING VFPPDIMS
+    14 READING VFPIDIMS
+    15 READING WSEGDIMS
+    16 READING START   
 
  @--MESSAGE  AT TIME        0.0   DAYS    ( 1-JAN-   0):
  @           CHECKING FOR LICENSES                                           
