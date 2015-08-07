@@ -1,0 +1,270 @@
+--
+-- Foamy oil example
+--
+--- Keyword REACCORD to order component terms in chemical reaction rates
+--- Keyword REACRATE to fix a constant reaction rate
+--- Keyword STOPROD to set stoichiometric coefficients for products
+--- Keyword STOREAC to set stoichiometric coefficients for reactants 
+--- Keyword REACTION to define the number of chemical reactions
+--- Keyword CVTYPE to specify component volatility type
+--- Keyword CVTYPES to specify component volatility type for surface conditions 
+--- Keyword EQLDKVCR to specify k-values for equilibrium deviation reactions
+--- Keyword EQLREAC to specify equilibrium deviation reaction rates
+--- Keyword KVCRS to supply k-values for use in the surface calculations in thermal simulations
+--- Keyword REACCENTH to define the entalphy of a chemical reaction
+
+RUNSPEC   ========================================
+
+FIELD
+
+DIMENS
+11 11 4 /
+
+WATER
+OIL
+GAS
+
+THERMAL
+
+COMPS
+3       /
+
+REACTIONS
+2 2 1 /
+
+
+GRID      ========================================
+
+DXV
+      11*10   / ft
+DYV
+      11*10   / ft
+DZV
+       4*10   / ft
+TOPS
+     121*1500 / ft
+
+PORO
+ 121*0.3     121*0.3     121*0.3     121*0.3     /
+PERMX
+ 121*2000.0  121*500.0   121*1000.0  121*2000.0  / mD
+PERMY
+ 121*2000.0  121*500.0   121*1000.0  121*2000.0  / = PERMX
+PERMZ
+ 121*1000.0  121*250.0   121*500.0   121*1000.0  / = PERMX / 2
+THCONR
+ 121*24.0    121*24.0    121*24.0    121*24.0    / Btu/ft/D/F
+HEATCR
+ 121*35.0    121*35.0    121*35.0    121*35.0    / Btu/ft3/F
+
+
+PROPS     ========================================
+
+-- Rock fluid properties
+
+SWFN
+   .4500   .0000   0.0
+   .4900   .0003   0.0
+   .5300   .0018   0.0
+   .5700   .0049   0.0
+   .6100   .0101   0.0
+   .6500   .0177   0.0
+   .6900   .0279   0.0
+   .7300   .0410   0.0
+   .7700   .0572   0.0
+   .8100   .0768   0.0
+   .8500   .1000   0.0
+  1.0000   .1000   0.0
+ /
+SGFN
+   .0000   .0000   0.0
+   .0001   .00002  0.0
+  1.0000   .2000   0.0
+ /
+SOF3
+   .0000   .0000   .0000
+   .1000   .0000   .0000
+   .1500   .0000   .0049
+   .1900   .0040   .0160
+   .2300   .0160   .0334
+   .2700   .0360   .0571
+   .3100   .0640   .0871
+   .3500   .1000   .1235
+   .3900   .1440   .1661
+   .4300   .1960   .2151
+   .4700   .2560   .2704
+   .5100   .3240   .3320
+   .5500   .4000   .4000
+  1.0000   .4000   .4000
+ /
+
+-- Component properites
+
+
+CNAMES
+         HEAVY    DISS_GAS FREE_GAS /
+CVTYPE
+         LIVE     DEAD     GAS      /
+MW
+         450      30.07    30.07    /
+KVCR
+         212      0        0     
+         1.554E5  170400   170400
+         0        0        0     
+         4000     3062     3062  
+         480      0        0        /
+TCRIT
+         1409.67  549.7    549.7    /
+PCRIT
+         140.     708.2    708.2    /
+CREF
+         5.0E-5   5.0E-5   5.0E-5   /
+DREF
+         57.6     39.375   39.375   /
+THERMEX1
+         3.7E-4   3.7E-4   3.7E-4   /
+ZFACTOR
+         0.97     0.96     0.96     /
+SPECHA
+         .55      .55      .55      /
+HEATVAP
+        100.0     0         0       /
+OILVISCT
+ 75      106      2.3      1.0
+100       91      2.0      1.0      /
+GASVISCT
+ 75     0.0285    1.0      .0143
+100     0.0297    1.0      .0149    /
+
+
+-- Surface properties
+
+CVTYPES
+         LIVE     LIVE     LIVE     /
+TCRITS
+         1409.67  549.7    549.7    /
+KVCRS
+         212      0        0     
+         1.554E5  170400   170400
+         0        0        0     
+         4000     3062     3062  
+         480      0        0        /
+
+--
+
+
+STCOND
+60 14.7 /
+
+
+PVTW
+--  Pref       Bw        Cw          Vw        Cvw       
+--  PSIA       RB/STB    1/PSI       CPOISE    1/PSI       
+    75.000     1.0       3.E-08      .3        7.E-09 /                                                                      
+
+ROCK
+75.0  5.0E-04  /
+
+ZMFVD
+ 1500.0  0.87  0.13  0.00 /
+
+TEMPVD
+  1300.0  75.0
+  1700.0  75.0  /
+
+
+-- Reactions
+
+STOREAC
+       0       1       0       0 / 1: DISS_GAS -> FREE_GAS
+       0       0       1       0 / 2: FREE_GAS -> DISS_GAS
+STOPROD
+       0       0       1       0 / 1: DISS_GAS -> FREE_GAS
+       0       1       0       0 / 2: FREE_GAS -> DISS_GAS
+REACCORD
+       0       0       0       0 / 1
+       0       0       0       0 / 2
+
+
+REACRATE
+       0     0       / 1,2
+
+REACENTH
+       0        0        / Latent heats Btu/lbmol
+
+EQLDREAC
+-- #  TYPE XC  YC  KV
+   1  1    2   3   1  / 1: proportional to X2 - Y3/K1
+   2  2    2   3   1  / 2: proportional to Y3 - K1.X2
+
+EQLDKVCR
+0     
+170400
+0     
+3062  
+0      /
+
+SOLUTION  ========================================
+
+EQUIL
+--  Ddat    Pdat     Dwoc    Pcog    Dgoc    Pgoc  It1  It2  Iac Iin
+1500.0      75.0     1600.0  0.0     1500.0  0.0   1     1    0   1  /
+
+OUTSOL
+PRES TEMP SOIL SWAT /
+
+RPTSOL
+PRES MLSC ENERGY TEMP SOIL SGAS SWAT /
+
+SUMMARY   ========================================
+
+ALL
+
+PERFORMANCE
+
+RUNSUM
+
+
+RPTONLY
+SCHEDULE  ========================================
+
+
+-- Output
+
+RPTSCHED
+PRES MLSC TEMP SOIL SWAT SGAS XMF YMF /
+
+
+-- Numerical control
+
+CVCRIT
+ 1* 15 6* 2 /
+
+TSCRIT
+--initT minT maxT maxInc/Dec targTTE maxTTE TTPT MTPT TSCT MxWT
+  .001 .0001 10.0   1*   1*      10     100    1*  1*   10.0  0.5
+--maxPT maxSC ATPT SACT maxSA TEMT maxTEM
+  1*    50    1*   0.5  1*    50  500 /
+
+
+-- Well definition
+
+WELSPECS
+PROD  FIELD  6 6 1* OIL  /
+/
+
+COMPDAT
+PROD   6 6 1 4 OPEN  1 1* 0.6 /
+/
+
+
+-- Well controls and time steps
+
+WCONPROD
+PROD  OPEN BHP 5* 17 /
+/
+
+TSTEP
+ 31 28 31 30 31 30 31 31 30 31 30 31 /
+
+END
