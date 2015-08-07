@@ -1,0 +1,174 @@
+
+
+
+ $$$$$   $$$   $      $$$  $$$$    $$$   $$$$$     $    $$$    $$$ 
+ $      $   $  $       $   $   $  $   $  $        $$   $   $  $   $
+ $      $      $       $   $   $  $      $         $   $   $  $   $
+ $$$$   $      $       $   $$$$    $$$   $$$$      $   $   $  $   $
+ $      $      $       $   $          $  $         $   $   $  $   $
+ $      $   $  $       $   $      $   $  $         $   $   $  $   $
+ $$$$$   $$$   $$$$$  $$$  $       $$$   $$$$$    $$$   $$$    $$$ 
+
+
+
+                       $$$$$   $$$   $      $$$  $$$$    $$$   $$$$$     $    $$$    $$$ 
+                       $      $   $  $       $   $   $  $   $  $        $$   $   $  $   $
+                       $      $      $       $   $   $  $      $         $   $   $  $   $
+                       $$$$   $      $       $   $$$$    $$$   $$$$      $   $   $  $   $
+                       $      $      $       $   $          $  $         $   $   $  $   $
+                       $      $   $  $       $   $      $   $  $         $   $   $  $   $
+                       $$$$$   $$$   $$$$$  $$$  $       $$$   $$$$$    $$$   $$$    $$$ 
+
+
+
+                                             $$$$$   $$$   $      $$$  $$$$    $$$   $$$$$     $    $$$    $$$ 
+                                             $      $   $  $       $   $   $  $   $  $        $$   $   $  $   $
+                                             $      $      $       $   $   $  $      $         $   $   $  $   $
+                                             $$$$   $      $       $   $$$$    $$$   $$$$      $   $   $  $   $
+                                             $      $      $       $   $          $  $         $   $   $  $   $
+                                             $      $   $  $       $   $      $   $  $         $   $   $  $   $
+                                             $$$$$   $$$   $$$$$  $$$  $       $$$   $$$$$    $$$   $$$    $$$ 
+
+
+
+                                                                   $$$$$   $$$   $      $$$  $$$$    $$$   $$$$$     $    $$$    $$$ 
+                                                                   $      $   $  $       $   $   $  $   $  $        $$   $   $  $   $
+                                                                   $      $      $       $   $   $  $      $         $   $   $  $   $
+                                                                   $$$$   $      $       $   $$$$    $$$   $$$$      $   $   $  $   $
+                                                                   $      $      $       $   $          $  $         $   $   $  $   $
+                                                                   $      $   $  $       $   $      $   $  $         $   $   $  $   $
+                                                                   $$$$$   $$$   $$$$$  $$$  $       $$$   $$$$$    $$$   $$$    $$$ 
+ 
+ Version =  2009.1
+ Arch    =  PC WINDOWS (32 bit)
+Annex    | Modification date    | Update date          | baseline             
+=====    | =================    | ===========          | ========             
+ECLIPSE  | 27-APR-2009 16:22:47 | 27-APR-2009 19:37:10 | S:\2009.1_w18i
+system   | 22-APR-2009 14:52:01 | 25-APR-2009 05:27:35 | S:\2009.1_w18
+utility  | 17-FEB-2009 08:34:11 | 25-APR-2009 05:40:00 | S:\2009.1_w18
+ 
+
+1
+
+ ******** ECHO OF INPUT DATA FOR RUN TRIPLEL_DUALK
+
+ 0: -- ECLIPSE test data deck
+ 0: -- **********************
+ 0: -- This is a deck for triple porosity testing.
+ 0: -- Includes many options, viz:
+ 0: --      End-point scaling versus depth
+ 0: --      API tracking of the different PVT oils
+ 0: --      Tracer tracking of initial gas-cap gas and
+ 0: --                         injected water
+ 0: --      Group control of wells
+ 0: --      Reperforation of wells by completion interval
+ 0: --      Use of the drilling queue
+ 0: --
+ 0: -- Variations also include:
+ 0: --      Use of LGR around a single well which is compared with
+ 0: --           a standard ECLIPSE run with 4 additional rows and columns
+ 0: --      Use of the FLUX options
+ 0: -- 2008.1 Data: Vertical Gravity Drainage (E300)
+ 0: -- The multiporosity russian doll is used as a vertical stack of matrix cells
+ 0: -- and all matrix cells are connected to the fracture
+ 0: RUNSPEC
+ 0: TITLE
+ 0: ECLIPSE TEST MODEL
+ 0: 
+ 0: DIMENS
+ 0:    20   15    24  /
+ 0: 
+ 0: OIL
+ 0: 
+ 0: WATER
+ 0: 
+ 0: GAS
+ 0: COMPS
+ 0:  6 /
+ 0: 
+ 0: FIELD
+ 0: 
+ 0: 
+ 0: TABDIMS
+ 0:     2    1   20   20    3   20 /
+ 0: 
+ 0: 
+ 0: WELLDIMS
+ 0:    20    8    3   15 /
+ 0: 
+ 0: UNIFOUT
+ 0: START
+ 0:    1 'JAN' 1990  /
+ 0: 
+ 0: DUALPORO
+ 0: DUALPERM
+ 0: OPTIONS3
+ 0:  32* 1 /
+ 0: TRPLPORO
+ 0:  2 /
+ 0: FULLIMP
+ 0: NODPCO
+ 0: GRAVDR
+ 0: GRID
+ 0: 
+ 0: SAVE
+ 0: /
+ 0: 
+ 0: NOECHO
+
+ @--WARNING  AT TIME        0.0   DAYS    ( 1-JAN-   0):
+ @           UNRECOGNISED MNEMONIC PSAT             IN DATA                  
+ @           FOR KEYWORD RPTSOL   IS IGNORED                                 
+
+ ******** END OF INPUT DATA FOR RUN TRIPLEL_DUALK
+     1 READING RUNSPEC 
+     2 READING TITLE   
+     3 READING DIMENS  
+     4 READING OIL     
+     5 READING WATER   
+     6 READING GAS     
+     7 READING COMPS   
+
+ @--  ERROR  AT TIME        0.0   DAYS    ( 1-JAN-   0):
+ @           UNRECOGNISED KEYWORD COMPS    IN RUNSPEC DATA                   
+
+ @--WARNING  AT TIME        0.0   DAYS    ( 1-JAN-   0):
+ @           SPURIOUS DATA BEFORE FIELD    KEYWORD                           
+ @            6 /                                                            
+     8 READING FIELD   
+     9 READING TABDIMS 
+    10 READING WELLDIMS
+    11 READING UNIFOUT 
+    12 READING START   
+    13 READING DUALPORO
+    14 READING DUALPERM
+    15 READING OPTIONS3
+    16 READING TRPLPORO
+
+ @--  ERROR  AT TIME        0.0   DAYS    ( 1-JAN-1990):
+ @           TRPLPORO HAS BEEN SPECIFIED BUT                                 
+ @           DUALPERM HAS BEEN USED FIRST.                                   
+ @           THESE FEATURES ARE NOT COMPATIBLE                               
+ @           IN THIS RELEASE. TRIPLE POROSITY                                
+ @           HAS BEEN DISABLED                                               
+    17 READING FULLIMP 
+    18 READING NODPCO  
+
+ @--WARNING  AT TIME        0.0   DAYS    ( 1-JAN-1990):
+ @            NODPCO HAS NO EFFECT IN ECLIPSE 100                            
+    19 READING GRAVDR  
+    20 READING GRID    
+
+ @--MESSAGE  AT TIME        0.0   DAYS    ( 1-JAN-1990):
+ @           CHECKING FOR LICENSES                                           
+
+ @--  ERROR  AT TIME        0.0   DAYS    ( 1-JAN-1990):
+ @           LICENSE FAILURE: ERROR NUMBER IS -1                             
+
+ Error summary 
+ Comments               0
+ Warnings               2
+ Problems               0
+ Errors                 3
+ Bugs                   0
+ Final cpu       0.00 elapsed       0.00
