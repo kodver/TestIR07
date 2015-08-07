@@ -1,0 +1,50 @@
+<eclipse>
+<message date="1/1/1982" time="0.00000000000000">
+ CHECKING FOR LICENSES                                                   
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+ THE MEMORY REQUIRED TO PROCESS THE GRID SECTION IS                      
+      26392 KBYTES                                                       
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+ CHECKING FOR LICENSES                                                   
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+ NEITHER OLDTRAN,OLDTRANR NOR NEWTRAN SPECIFIED                          
+ TRANSMISSIBILITIES TO BE CALCULATED                                     
+ USING  NEWTRAN                                                          
+</message>
+<comment date="1/1/1982" time="0.00000000000000">
+ NO NON-NEIGHBOUR CONNECTIONS IN GLOBAL GRID                             
+</comment>
+<message date="1/1/1982" time="0.00000000000000">
+ NUMBER OF ACTIVE GLOBAL CELLS IS 62500                                  
+ NUMBER OF ACTIVE  LOCAL CELLS IS 0                                      
+  TOTAL NUMBER OF ACTIVE CELLS IS 62500                                  
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+ THE MEMORY REQUIRED TO PROCESS THE SOLUTION SECTION IS                  
+      88196 KBYTES                                                       
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+    59188 CHARACTER VARIABLES USED                                       
+</message>
+<warning date="1/1/1982" time="0.00000000000000">
+ MONOTONICITY WARNING IN PVTO TABLE NUMBER   1                           
+ FVF OF SATURATED OIL (=  2.1747) AT RS =   1.988 IS &lt; OR =           
+ FVF OF SATURATED OIL (=  2.1747) AT RS =   1.952                        
+</warning>
+<warning date="1/1/1982" time="0.00000000000000">
+ MONOTONICITY WARNING IN PVTO TABLE NUMBER   1                           
+ FVF OF SATURATED OIL (=  2.1749) AT RS =   2.198 IS &lt; OR =           
+ FVF OF SATURATED OIL (=  2.1749) AT RS =   2.126                        
+</warning>
+<message date="1/1/1982" time="0.00000000000000">
+ THE TOP-UP PHASE IS SET TO WATER AS                                     
+ GROUP FIELD    HAS A TARGET OR LIMIT RESERVOIR                          
+ VOLUME RATE OR VOIDAGE REPLACEMENT FRACTION                             
+ FOR WATER INJECTION CONTROL                                             
+</message>
+<message date="1/1/1982" time="0.00000000000000">
+ RESTART FILE WRITTEN   REPORT     0                                     
+</message>
